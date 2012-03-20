@@ -1,0 +1,44 @@
+--- mono-upnp-0.1.0/configure.ac.pld	2012-03-20 19:40:25.314926050 +0100
++++ mono-upnp-0.1.0/configure.ac	2012-03-20 19:40:38.901519113 +0100
+@@ -51,7 +51,7 @@ PKG_CHECK_MODULES([GLIB_SHARP_20], [glib
+ PKG_CHECK_MODULES([GLADE_SHARP_20], [glade-sharp-2.0])
+ PKG_CHECK_MODULES([MONO_ADDINS], [mono-addins])
+ PKG_CHECK_MODULES([TAGLIB_SHARP], [taglib-sharp])
+-PKG_CHECK_MODULES([NUNIT], [nunit])
++PKG_CHECK_MODULES([NUNIT], [mono-nunit])
+ 
+ AC_PATH_PROG(NUNIT_CMD, nunit-console2, nunit-console)
+ AC_SUBST(NUNIT_CMD)
+--- mono-upnp-0.1.0/tests/Mono.Upnp.Tests/Makefile.am.pld	2012-03-20 19:45:35.639911542 +0100
++++ mono-upnp-0.1.0/tests/Mono.Upnp.Tests/Makefile.am	2012-03-20 19:45:48.896506393 +0100
+@@ -86,7 +86,7 @@ RESOURCES =
+ EXTRAS = 
+ 
+ REFERENCES =  \
+-	-pkg:nunit \
++	-pkg:mono-nunit \
+ 	System \
+ 	System.Xml
+ 
+--- mono-upnp-0.1.0/tests/Mono.Upnp.Dcp.MediaServer1.Tests/Makefile.am.pld	2012-03-20 19:45:11.346709818 +0100
++++ mono-upnp-0.1.0/tests/Mono.Upnp.Dcp.MediaServer1.Tests/Makefile.am	2012-03-20 19:45:19.083334571 +0100
+@@ -91,7 +91,7 @@ EXTRAS = \
+ REFERENCES =  \
+ 	../../bin/Mono.Upnp.Dcp.MediaServer1.dll \
+ 	../../bin/Mono.Upnp.dll \
+-	-pkg:nunit \
++	-pkg:mono-nunit \
+ 	System \
+ 	System.Xml
+ 
+--- mono-upnp-0.1.0/tests/Mono.Upnp.Dcp.MediaServer1.FileSystem.Tests/Makefile.am.pld	2012-03-20 19:44:53.653472337 +0100
++++ mono-upnp-0.1.0/tests/Mono.Upnp.Dcp.MediaServer1.FileSystem.Tests/Makefile.am	2012-03-20 19:44:58.020115348 +0100
+@@ -89,7 +89,7 @@ REFERENCES =  \
+ 	../../bin/Mono.Upnp.Dcp.MediaServer1.dll \
+ 	../../bin/Mono.Upnp.Dcp.MediaServer1.FileSystem.dll \
+ 	../../bin/Mono.Upnp.dll \
+-	-pkg:nunit \
++	-pkg:mono-nunit \
+ 	-pkg:taglib-sharp \
+ 	System
+ 
