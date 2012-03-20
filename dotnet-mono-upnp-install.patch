@@ -1,0 +1,27 @@
+--- mono-upnp-0.1.0/Makefile.include.pld	2012-03-20 23:28:09.770534154 +0100
++++ mono-upnp-0.1.0/Makefile.include	2012-03-20 23:28:35.328366711 +0100
+@@ -62,11 +62,11 @@ EXTRA_DIST += $(build_sources) $(build_r
+ CLEANFILES += $(ASSEMBLY) $(ASSEMBLY).mdb $(BINARIES) $(build_resx_resources) $(build_satellite_assembly_list)
+ DISTCLEANFILES = $(GENERATED_FILES) $(pc_files) $(BUILD_DIR)/*
+ 
+-assemblyfilesdir = $(pkglibdir)
++assemblyfilesdir = @prefix@/lib/@PACKAGE@
+ assemblyfiles_DATA = $(ASSEMBLY)
+ bin_SCRIPTS = $(BINARIES)
+ 
+-programfilesdir = @libdir@/@PACKAGE@
++programfilesdir = @prefix@/lib/@PACKAGE@
+ programfiles_DATA = $(PROGRAMFILES)
+ linuxpkgconfigdir = @libdir@/pkgconfig
+ linuxpkgconfig_DATA = $(LINUX_PKGCONFIG)
+--- mono-upnp-0.1.0/expansions.m4.pld	2012-03-20 23:32:01.777784472 +0100
++++ mono-upnp-0.1.0/expansions.m4	2012-03-20 23:32:12.368267585 +0100
+@@ -9,7 +9,7 @@ AC_DEFUN([SHAMROCK_EXPAND_LIBDIR],
+ 			NONE) exec_prefix=$prefix ;; 
+ 			*) ;; 
+ 		esac
+-		eval echo $libdir
++		eval echo $prefix/lib
+ 	)`
+ 	AC_SUBST(expanded_libdir)
+ ])

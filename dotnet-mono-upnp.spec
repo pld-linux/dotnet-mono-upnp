@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	https://github.com/downloads/mono/mono-upnp/mono-upnp-%{version}.tar.gz
 # Source0-md5:	76fc45684f3baf21134c06a68a75e51b
 Patch0:		%{name}-use-mono-nunit.patch
+Patch1:		%{name}-install.patch
 URL:		https://github.com/mono/mono-upnp
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -38,6 +39,7 @@ Ten pakiet dostarcza pliki programistyczne dla Mono.Upnp.
 %prep
 %setup -q -n mono-upnp-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal} -I .
