@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.mono
 Summary:	Client/server libraries for UPnP
 Name:		dotnet-mono-upnp
 Version:	0.1.0
