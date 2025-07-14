@@ -37,8 +37,8 @@ Ten pakiet dostarcza pliki programistyczne dla Mono.Upnp.
 
 %prep
 %setup -q -n mono-upnp-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__aclocal} -I .
