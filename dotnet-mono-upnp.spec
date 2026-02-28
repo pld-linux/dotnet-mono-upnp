@@ -1,7 +1,7 @@
 Summary:	Client/server libraries for UPnP
 Name:		dotnet-mono-upnp
 Version:	0.1.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	https://github.com/downloads/mono/mono-upnp/mono-upnp-%{version}.tar.gz
